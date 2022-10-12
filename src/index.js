@@ -8,6 +8,8 @@ console.log("hi this is a demo")
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+console.log(changes)
+const a = 100
 
 app.use('/', route);
 
