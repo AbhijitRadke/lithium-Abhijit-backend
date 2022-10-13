@@ -10,6 +10,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 console.log(changes)
 const a = 100
+// this is new changes 
+const b = 18
+const c = 16
+console.log(b + c)
+
 
 app.use('/', route);
 
