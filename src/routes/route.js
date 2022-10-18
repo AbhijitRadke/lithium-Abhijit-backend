@@ -101,27 +101,13 @@ router.get('/films/:filmId', function (req, res) {
         }
     ]
     let index = req.params
-    if (index.filmId < films.length) {
+    if (index.filmId <= films.length) {
         res.send(films[(index.filmId - 1)])
     } else {
-        res.send("index number must be between 0 to " + (films.length - 1))
+        res.send("id number must be between 1 to " + (films.length))
     }
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = router;
