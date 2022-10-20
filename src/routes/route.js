@@ -72,6 +72,50 @@ router.get('/missingNO2', function (req, res) {
 })
 
 
+let persons = [
+    {
+        name: "PK",
+        age: 10,
+        votingStatus: false
+    },
+    {
+        name: "SK",
+        age: 20,
+        votingStatus: false
+    },
+    {
+        name: "AA",
+        age: 70,
+        votingStatus: false
+    },
+    {
+        name: "SC",
+        age: 5,
+        votingStatus: false
+    },
+    {
+        name: "HO",
+        age: 40,
+        votingStatus: false
+    }
+]
+let arrOfVoters = []
+router.post('/votAge', function (req, res) {
+    let vot = req.query.age
+    for (let i = 0; i < persons.length; i++) {
+        let per = persons[i]
+        if (per.age >= vot) {
+            persons[i].votingStatus = true
+            arrOfVoters.push(per.name)
+        }
+    }
+    // console.log(persons)
+    res.send({ result: arrOfVoters, arr: persons })
+
+})
+
+
+
 
 // router.post("/test-post-3", function(req, res) {
 //     // let id = req.body.user
