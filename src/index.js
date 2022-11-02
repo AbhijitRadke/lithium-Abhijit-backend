@@ -7,6 +7,16 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(
+    function (req, res, next) {
+        let ip = req.ip
+        let url = req.url
+        let times = Date()
+        console.log(ip, url, times)
+
+        next()
+    }
+)
 
 mongoose.connect("mongodb+srv://AbhijitRadke:7768916626@cluster0.v76zsxi.mongodb.net/adb", {
     useNewUrlParser: true
@@ -15,6 +25,9 @@ mongoose.connect("mongodb+srv://AbhijitRadke:7768916626@cluster0.v76zsxi.mongodb
     .catch(err => console.log(err))
 
 app.use('/', route);
+
+
+
 
 
 app.listen(process.env.PORT || 3000, function () {
