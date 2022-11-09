@@ -23,3 +23,13 @@
 // -- ALL GOOD... //status(200)- OK
 // --- "ALL GOOD and A NEW RESOURCE WAS SUCCEFULLY CREATED" ...status(201)..e.g a new user registers herself successfully
 
+ "bookName": "harry poter",
+    "authorName": "J.K.Rolling", 
+    "tags": ["mistry","Adventure", "fenticy"],
+    
+    "isPublished":true,
+    "prices": {
+        "indianPrice": "250",
+        "europePrice": "45"
+    },
+    "sales": 1526
